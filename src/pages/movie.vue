@@ -17,7 +17,7 @@
         created () {
             this.$store.dispatch('GET_MOVIE', {
                 id: this.$route.params.id,
-            })
+            });
         },
         methods: {
             moment: function (data) {
@@ -37,14 +37,21 @@
                     return '/static/images/no-image-backdrop.png';
                 }
             },
+            isLoading: function () {
+                if (this.MovieDetail.id == this.$route.params.id) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
         },
     }
 </script>
 <template>
     <f7-page :key="$route.path" class="bg-white">
         <f7-navbar title="Movie Detail" back-link="Back" sliding></f7-navbar>
-        <loader v-if="!MovieDetail"/>
-        <div v-if="MovieDetail">
+        <loader v-if="!isLoading()" />
+        <div v-if="isLoading()" >
             <img :src="backdropImg(MovieDetail.backdrop_path)" width="100%">
             <div class="card movie-card">
                 <div class="card-header">
