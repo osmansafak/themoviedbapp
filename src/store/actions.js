@@ -63,6 +63,7 @@ export default {
         commit('REMOVE_MOVIES')
     },
     GET_SWIPER ({commit}, data) {
+        commit('REMOVE_MOVIES')
         axios.get(API_URL + 'movie/' + data.type + '?api_key=' + API_KEY).then((res) => {
             if (res.status === 200) {
                 commit('SET_SWIPER', {data: res.data, type: data.type})
