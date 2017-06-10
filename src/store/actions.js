@@ -33,28 +33,22 @@ export default {
         })
     },
     GET_MOVIES ({ commit },data) {
+        if (data.page == 1) {
+            commit('REMOVE_MOVIES')
+        }
         if (data.type == 'genre') {
-            if (data.page == 1) {
-                commit('REMOVE_MOVIES')
-            }
             axios.get(API_URL + 'genre/' + data.id + '/movies?page=' + data.page + '&api_key=' + API_KEY).then((res) => {
                 if (res.status === 200) {
                     commit('SET_MOVIES', res.data)
                 }
             });
         } else if (data.type == 'futured') {
-            if (data.page == 1) {
-                commit('REMOVE_MOVIES')
-            }
             axios.get(API_URL + 'movie/' + data.id + '?page=' + data.page + '&api_key=' + API_KEY).then((res) => {
                 if (res.status === 200) {
                     commit('SET_MOVIES', res.data)
                 }
             });
         } else if (data.type == 'search') {
-            if (data.page == 1) {
-                commit('REMOVE_MOVIES')
-            }
             axios.get(API_URL + 'search/movie?query=' + data.id + '&page=' + data.page + '&api_key=' + API_KEY).then((res) => {
                 if (res.status === 200) {
                     commit('SET_MOVIES', res.data)
