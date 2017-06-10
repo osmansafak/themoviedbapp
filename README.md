@@ -1,5 +1,5 @@
-# themoviedbapp
-A Vue.js project with Framework7
+# The Movie Database App
+A Vue.js project with Framework7 [Live Demo] (https://themoviedbapp-5c199.firebaseapp.com/)
 
 ## Build Setup
 
