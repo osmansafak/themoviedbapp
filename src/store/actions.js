@@ -14,7 +14,7 @@ export default {
     GET_MOVIE ({ commit },data) {
         axios.get(API_URL + 'movie/' + data.id + '?api_key=' + API_KEY).then((res) => {
             if (res.status === 200) {
-                commit('SET_MOVIE', res.data)
+                commit('SET_MOVIE', res.data);
             }
         })
     },
