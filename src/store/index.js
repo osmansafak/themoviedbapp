@@ -13,6 +13,8 @@ export const store = new Vuex.Store({
         genres: [],
         movies: [],
         movie: [],
+        cast: [],
+        trailer: [],
         now_playing: [],
         popular: [],
         upcoming: [],

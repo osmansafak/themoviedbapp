@@ -18,6 +18,20 @@ export default {
             }
         })
     },
+    GET_CAST ({ commit },data) {
+        axios.get(API_URL + 'movie/' + data.id + '/credits?api_key=' + API_KEY).then((res) => {
+            if (res.status === 200) {
+                commit('SET_CAST', res.data);
+            }
+        })
+    },
+    GET_TRAILER ({ commit },data) {
+        axios.get(API_URL + 'movie/' + data.id + '/videos?api_key=' + API_KEY).then((res) => {
+            if (res.status === 200) {
+                commit('SET_TRAILER', res.data);
+            }
+        })
+    },
     GET_MOVIES ({ commit },data) {
         if (data.type == 'genre') {
             if (data.page == 1) {
