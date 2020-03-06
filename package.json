@@ -21,7 +21,7 @@
   "license": "MIT",
   "homepage": "https://themoviedbapp-5c199.firebaseapp.com/",
   "dependencies": {
-    "axios": "^0.16.2",
+    "axios": "^0.18.1",
     "framework7": "^1.6.4",
     "framework7-icons": "^0.8.9",
     "framework7-vue": "^0.9.2",
